@@ -92,6 +92,10 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        Gate::authorize('delete', $blog);
+
+        $blog->delete();
+
+        return redirect(route('blogs.index'));
     }
 }
