@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use App\Models\Blog;
 use Illuminate\Http\Request;
@@ -15,11 +16,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        // $blogs = auth()->user()->blogs; // Fetch blogs for the authenticated user
+        // Fetch blogs authored by the authenticated user
+        $blogs = Blog::where('user_id', Auth::id())->latest()->get();
 
-        return view("blogs.index", [
-            "blogs" => Blog::all()
-        ]);
+        return view('blogs.index', compact('blogs'));
     }
 
     /**

@@ -1,20 +1,21 @@
 <x-app-layout>
     <div class="container max-w-2xl mx-auto p-4 d-flex justify-content-center">
         <div class="col-8">
-            <!-- Button to Write Blog -->
-            <div class="me-3">
-                <a href="{{ route('blogs.create') }}" class="btn btn-success">
-                    {{ __('Write Blog +') }}
-                </a>
-            </div>
+            
 
             <!-- Label for Posts -->
             <div class="mt-4">
-                <h5 class="mt-3">{{ __('Your Blogs') }}</h5>
+                <h5 class="mt-3 fw-semibold display-5">{{ __('Your Blogs') }}</h5>
             </div>
 
             <!-- Blog Posts -->
             <div class="mt-4">
+                <!-- Button to Write Blog -->
+                <div class="me-3 mb-4">
+                    <a href="{{ route('blogs.create') }}" class="btn btn-success">
+                        {{ __('Write Blog +') }}
+                    </a>
+                </div>
                 @if($blogs->isEmpty())
                     <div class="card mx-4 mb-4">
                         <div class="card-body">
