@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,5 +22,9 @@ Route::middleware('auth')->group(function () {
 Route::resource('blogs', BlogController::class)
     ->only(['index', 'create', 'store', 'edit', 'update', 'destroy', 'show'])
     ->middleware(['auth', 'verified']);
+
+Route::middleware('auth')->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    });    
 
 require __DIR__.'/auth.php';
