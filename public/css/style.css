@@ -1,0 +1,21 @@
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-title a {
+    display: inline-block !important; /* Ensures padding and rounded corners apply */
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.card-title a:hover {
+    background-color: #007bff !important; /* Light blue highlight */
+    color: #ffff !important; /* Bootstrap primary blue on hover */
+    text-decoration: none !important; /* Retains no underline */
+    padding: 0.3em 1em;
+    border-radius: 15px;
+}

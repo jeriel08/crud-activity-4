@@ -31,15 +31,15 @@
                                     <div>
                                         <!-- Blog Title as Hyperlink -->
                                         <h3 class="card-title font-weight-bold">
-                                            <a href="{{ route('blogs.show', $blog->id) }}" class="text-decoration-none text-dark">
+                                            <a href="{{ route('blogs.show', $blog->id) }}" class="text-decoration-none text-dark px-4 py-3 rounded-5">
                                                 {{ $blog->title }}
                                             </a>
                                         </h3>
                                         <!-- Author Name -->
-                                        <p class="card-text">{{ __('By: ') }}{{ $blog->author->name }}</p>
+                                        <p class="card-text ms-4 mb-2">{{ __('By: ') }}{{ $blog->author->name }}</p>
                                     </div>
                                     <!-- Creation Time -->
-                                    <div class="text-muted">
+                                    <div class="text-muted me-4">
                                         <small>{{ $blog->created_at->diffForHumans() }}</small>
                                     </div>
                                 </div>
