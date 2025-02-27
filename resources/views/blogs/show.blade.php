@@ -3,20 +3,22 @@
         <!-- Header with Go Back, Edit, and Delete Buttons -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <!-- Go Back Button -->
-            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary">
+            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary d-flex align-items-center justify-content-center gap-2">
+                <i class='bx bx-arrow-back'></i>
                 {{ __('Go Back') }}
             </a>
             
             @if ($blog->author->is(auth()->user()))
-                <!-- Edit and Delete Buttons -->
-                <div>
-                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-primary me-2">
+                <div class="d-flex align-items-center">
+                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-primary me-2 d-flex align-items-center justify-content-center gap-2">
+                        <i class='bx bx-edit' ></i>
                         {{ __('Edit') }}
                     </a>
-                    <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST" class="d-inline">
+                    <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this blog?')">
+                        <button type="submit" class="btn btn-danger d-flex align-items-center justify-content-center gap-2" onclick="return confirm('Are you sure you want to delete this blog?')">
+                            <i class='bx bx-trash-alt' ></i>
                             {{ __('Delete') }}
                         </button>
                     </form>

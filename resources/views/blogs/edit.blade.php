@@ -46,7 +46,8 @@
 
                 <!-- Buttons -->
                 <div class="d-flex gap-3">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary d-flex align-items-center justify-content-center gap-2">
+                        <i class='bx bx-upload fs-5'></i>
                         {{ __('Update') }}
                     </button>
                     <a href="{{ route('blogs.index') }}" class="btn btn-secondary">
