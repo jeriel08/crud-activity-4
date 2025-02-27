@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand" href="{{ route('dashboard') }}">
-            <x-application-logo class="h-9 w-auto" />
+        <a class="navbar-brand fw-semibold me-5" href="{{ route('dashboard') }}">
+            Blogram.
         </a>
 
         <!-- Toggle Button for Mobile -->

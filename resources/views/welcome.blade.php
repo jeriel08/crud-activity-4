@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <!-- Application Title on the Right -->
-            <a class="navbar-brand" href="#">BloGram</a>
+            <a class="navbar-brand fw-semibold" href="#">Blogram.</a>
             
             <!-- Login and Register Buttons on the Left -->
             <div class="d-flex ms-auto">
@@ -37,7 +37,7 @@
 
     <!-- Centered Welcome Message -->
     <div class="container text-center my-auto">
-        <h1 class="display-4">Welcome to Blogram</h1>
+        <h1 class="display-4">Welcome to <span class="fw-semibold">Blogram.</span></h1>
         <p class="lead">Your go-to platform for sharing and connecting.</p>
     </div>
 

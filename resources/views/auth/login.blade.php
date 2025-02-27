@@ -37,16 +37,17 @@
                     <label for="remember_me" class="form-check-label">{{ __('Remember me') }}</label>
                 </div>
 
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                    <button type="submit" class="btn btn-primary d-flex align-items-center gap-2">
+                        <i class='bx bx-log-in fs-4'></i>
+                        {{ __('Log in') }}
+                    </button>
+                
                     @if (Route::has('password.request'))
                         <a class="text-decoration-none" href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
                         </a>
                     @endif
-
-                    <button type="submit" class="btn btn-primary">
-                        {{ __('Log in') }}
-                    </button>
                 </div>
             </form>
         </div>
