@@ -11,9 +11,10 @@
             <!-- Blog Posts -->
             <div class="mt-4">
                 <!-- Button to Write Blog -->
-                <div class="me-3 mb-4">
-                    <a href="{{ route('blogs.create') }}" class="btn btn-success">
-                        {{ __('Write Blog +') }}
+                <div class="col-3 me-3 mb-4">
+                    <a href="{{ route('blogs.create') }}" class="btn btn-success d-flex align-items-center justify-content-center gap-2">
+                        <i class='bx bx-book-add fs-5' ></i>
+                        {{ __('Write Blog') }}
                     </a>
                 </div>
                 @if($blogs->isEmpty())
