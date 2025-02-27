@@ -16,7 +16,7 @@
                 <!-- Email Address -->
                 <div class="mb-3">
                     <label for="email" class="form-label">{{ __('Email') }}</label>
-                    <input id="email" type="email" name="email" class="form-control" value="{{ old('email') }}" required autofocus autocomplete="username">
+                    <input id="email" type="email" name="email" class="form-control" value="{{ old('email') }}" required autofocus autocomplete="username" placeholder="Email Address">
                     @if ($errors->has('email'))
                         <div class="text-danger small">{{ $errors->first('email') }}</div>
                     @endif
@@ -25,7 +25,7 @@
                 <!-- Password -->
                 <div class="mb-3">
                     <label for="password" class="form-label">{{ __('Password') }}</label>
-                    <input id="password" type="password" name="password" class="form-control" required autocomplete="current-password">
+                    <input id="password" type="password" name="password" class="form-control" required autocomplete="current-password" placeholder="Password">
                     @if ($errors->has('password'))
                         <div class="text-danger small">{{ $errors->first('password') }}</div>
                     @endif
