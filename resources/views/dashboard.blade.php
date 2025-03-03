@@ -25,7 +25,7 @@
                                         <div>
                                             <!-- Blog Title as Hyperlink -->
                                             <h3 class="card-title font-weight-bold">
-                                                <a href="{{ route('blogs.show', $blog->id) }}" class="text-decoration-none text-dark px-4 py-3 rounded-5">
+                                                <a href="{{ route('blogs.show', $blog->id) }}" class="text-decoration-none text-dark px-4 py-3 rounded-3">
                                                     {{ $blog->title }}
                                                 </a>
                                             </h3>
