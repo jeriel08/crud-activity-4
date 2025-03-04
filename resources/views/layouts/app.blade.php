@@ -54,5 +54,21 @@
 
         <!-- Add htmx CDN -->
         <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+        <!-- Add reinitialization script -->
+        {{-- <script>
+            document.body.addEventListener('htmx:afterSwap', function(event) {
+                // Find all dropdown toggles and reinitialize them
+                document.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(function(dropdownToggle) {
+                    // Remove any existing dropdown instances to avoid duplicates
+                    const existingDropdown = bootstrap.Dropdown.getInstance(dropdownToggle);
+                    if (existingDropdown) {
+                        existingDropdown.dispose();
+                    }
+                    // Initialize a new dropdown instance
+                    new bootstrap.Dropdown(dropdownToggle);
+                });
+            });
+        </script> --}}
     </body>
 </html>
