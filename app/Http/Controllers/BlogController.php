@@ -90,14 +90,20 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy(Request $request, Blog $blog)
     {
-        Gate::authorize('delete', $blog);
-
         $blog->delete();
 
-        return view('blog.index',[
-            'blogs' => Blog::with('user')->latest()->get(),
-        ]);
+        if ($request->hasHeader('HX-Request')) {
+            // Render the full index page (with layout) since we're replacing the entire <body>
+            $response = view('blogs.index', ['blogs' => Blog::all()]);
+
+            // Add HX-Location header to update the browser URL to /blogs
+            return response($response)
+                ->header('HX-Location', route('blogs.index'));
+        }
+
+        // For non-htmx requests, redirect to the index
+        return redirect()->route('blogs.index');
     }
 }

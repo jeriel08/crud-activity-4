@@ -22,7 +22,8 @@
                     </a>
                     <form hx-delete="{{ route('blogs.destroy', $blog->id) }}" 
                         hx-target="body"
-                        hx-swap="outerHTML">    
+                        hx-swap="innerHTML"
+                        hx-push-url="true">    
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger d-flex align-items-center justify-content-center gap-2">

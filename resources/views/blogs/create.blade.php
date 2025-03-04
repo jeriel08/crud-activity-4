@@ -7,7 +7,8 @@
             <!-- Blog Form -->
             <form hx-post="{{ route('blogs.store') }}"
                     hx-target="body"
-                    hx-swap="outerHTML">
+                    hx-swap="outerHTML"
+                    hx-push-url="true">
                 @csrf
 
                 <!-- Title Input -->
