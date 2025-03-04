@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand fw-semibold me-5" href="{{ route('dashboard') }}">
+        <a class="navbar-brand fw-semibold me-5" 
+            href="{{ route('dashboard') }}"
+            hx-boost="true"
+            hx-push-url="true">
             Blogram.
         </a>
 
@@ -14,12 +17,20 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav me-auto d-inline-flex align-items-center">
                 <li class="nav-item me-3">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="nav-link">
+                    <x-nav-link :href="route('dashboard')" 
+                                :active="request()->routeIs('dashboard')" 
+                                class="nav-link"
+                                hx-boost="true"
+                                hx-push-url="true">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </li>
                 <li class="nav-item">
-                    <x-nav-link :href="route('blogs.index')" :active="request()->routeIs('blogs.index')" class="nav-link">
+                    <x-nav-link :href="route('blogs.index')" 
+                                :active="request()->routeIs('blogs.index')" 
+                                class="nav-link"
+                                hx-boost="true"
+                                hx-push-url="true">
                         {{ __('Blog') }}
                     </x-nav-link>
                 </li>
@@ -33,7 +44,9 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <li>
-                            <x-dropdown-link :href="route('profile.edit')" class="dropdown-item">
+                            <x-dropdown-link :href="route('profile.edit')" class="dropdown-item"
+                            hx-boost="true"
+                            hx-push-url="true">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
                         </li>
