@@ -5,7 +5,9 @@
             <h3 class="mb-4">{{ __('Edit Blog') }}</h3>
 
             <!-- Blog Form -->
-            <form method="POST" action="{{ route('blogs.update', $blog->id) }}">
+            <form hx-post="{{ route('blogs.update', $blog->id) }}"
+                hx-target="body"
+                hx-swap="outerHTML">
                 @csrf
                 @method('PUT') <!-- Use PUT method for updates -->
 
@@ -50,7 +52,10 @@
                         <i class='bx bx-upload fs-5'></i>
                         {{ __('Update') }}
                     </button>
-                    <a href="{{ route('blogs.index') }}" class="btn btn-secondary">
+                    <a  href="{{ route('blogs.index') }}" 
+                        class="btn btn-secondary"
+                        hx-boost="true"
+                        hx-push-url="true">
                         {{ __('Cancel') }}
                     </a>
                 </div>

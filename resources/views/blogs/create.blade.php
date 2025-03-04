@@ -5,7 +5,9 @@
             <h3 class="mb-4">{{ __('Create Blog') }}</h3>
 
             <!-- Blog Form -->
-            <form method="POST" action="{{ route('blogs.store') }}">
+            <form hx-post="{{ route('blogs.store') }}"
+                    hx-target="body"
+                    hx-swap="outerHTML">
                 @csrf
 
                 <!-- Title Input -->
@@ -49,7 +51,10 @@
                         <i class='bx bx-upload fs-5'></i>
                         {{ __('Submit') }}
                     </button>
-                    <a href="{{ route('blogs.index') }}" class="btn btn-secondary">
+                    <a href="{{ route('blogs.index') }}" 
+                       class="btn btn-secondary"
+                       hx-boost="true"
+                       hx-push-url="true">
                         {{ __('Cancel') }}
                     </a>
                 </div>

@@ -96,6 +96,8 @@ class BlogController extends Controller
 
         $blog->delete();
 
-        return redirect(route('blogs.index'));
+        return view('blog.index',[
+            'blogs' => Blog::with('user')->latest()->get(),
+        ]);
     }
 }
