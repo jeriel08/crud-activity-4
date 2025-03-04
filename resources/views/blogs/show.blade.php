@@ -3,14 +3,20 @@
         <!-- Header with Go Back, Edit, and Delete Buttons -->
         <div class="d-flex justify-content-between align-items-center mb-4">
             <!-- Go Back Button -->
-            <a href="{{ url()->previous() }}" class="btn btn-outline-secondary d-flex align-items-center justify-content-center gap-2">
+            <a href="{{ url()->previous() }}" 
+                class="btn btn-outline-secondary d-flex align-items-center justify-content-center gap-2"
+                hx-boost="true"
+                hx-push-url="true">
                 <i class='bx bx-arrow-back'></i>
                 {{ __('Go Back') }}
             </a>
             
             @if ($blog->author->is(auth()->user()))
                 <div class="d-flex align-items-center">
-                    <a href="{{ route('blogs.edit', $blog->id) }}" class="btn btn-primary me-2 d-flex align-items-center justify-content-center gap-2">
+                    <a href="{{ route('blogs.edit', $blog->id) }}" 
+                        class="btn btn-primary me-2 d-flex align-items-center justify-content-center gap-2"
+                        hx-boost="true"
+                        hx-push-url="true">
                         <i class='bx bx-edit' ></i>
                         {{ __('Edit') }}
                     </a>

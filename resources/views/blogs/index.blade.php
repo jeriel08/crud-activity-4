@@ -12,7 +12,10 @@
             <div class="mt-4">
                 <!-- Button to Write Blog -->
                 <div class="col-3 me-3 mb-4">
-                    <a href="{{ route('blogs.create') }}" class="btn btn-success d-flex align-items-center justify-content-center gap-2">
+                    <a href="{{ route('blogs.create') }}" 
+                    class="btn btn-success d-flex align-items-center justify-content-center gap-2"
+                    hx-boost="true"
+                    hx-push-url="true">
                         <i class='bx bx-book-add fs-5' ></i>
                         {{ __('Write Blog') }}
                     </a>
@@ -31,7 +34,10 @@
                                     <div>
                                         <!-- Blog Title as Hyperlink -->
                                         <h3 class="card-title font-weight-bold">
-                                            <a href="{{ route('blogs.show', $blog->id) }}" class="text-decoration-none text-dark px-4 py-3 rounded-3">
+                                            <a href="{{ route('blogs.show', $blog->id) }}" 
+                                                class="text-decoration-none text-dark px-4 py-3 rounded-3"
+                                                hx-boost="true"
+                                                hx-push-url="true">
                                                 {{ $blog->title }}
                                             </a>
                                         </h3>
